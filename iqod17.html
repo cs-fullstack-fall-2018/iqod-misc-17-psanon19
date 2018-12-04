@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var email = "kyancy@yahoo.com";
+    var idintify = false;
+    var protectedEmail = "";
+
+    function cleanEmail(email)
+    {
+        for(var x = 0; x<email.length; x++){
+
+            if (email[x]==="@"){
+                idintify = true;
+            }
+
+            if (idintify===false){
+                protectedEmail+=email[x]
+            }
+
+            if (idintify===true){
+                email[x]=" "
+            }
+
+            if ((x+1)===email.length){
+                return protectedEmail
+            }
+        }
+    }
+
+    var cleaned = cleanEmail(email);
+    document.write(cleaned)
+
+</script>
+
+</body>
+</html>
